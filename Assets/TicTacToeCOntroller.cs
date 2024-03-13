@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,10 @@ public class TicTacToeController : MonoBehaviour
     
     GridState[,] grid;
 
+    [HideInInspector]public GridState playerChoose = GridState.PLAYER1;
     bool isInGame = true;
     WinLoseState currentWinLose = WinLoseState.NONE;
-    [HideInInspector]public int[] score;
+    [HideInInspector] public int[] score;
     
 
     // Start is called before the first frame update
@@ -30,12 +32,53 @@ public class TicTacToeController : MonoBehaviour
 
     void Update()
     {
-        
+        //退出游戏
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (playerChoose == GridState.NONE)
+        {
+            throw new ArgumentException("playerChoose suppose to be one of the player but is NONE");
+        }
+    }
+
+    /*
+     *判断胜负来给计分列表加分
+     */
+    private void FixedUpdate()
+    {
+        if (currentWinLose == WinLoseState.PLAYER1WIN)
+        {
+            score[0] += 1;
+            isInGame = false;
+            Time.timeScale = 0;
+        }
+        else if (currentWinLose == WinLoseState.PLAYER2WIN)
+        {
+            score[1] += 1;
+            isInGame = false;
+            Time.timeScale = 0;
+        }
+        else if (currentWinLose == WinLoseState.DRAW)
+        {
+            isInGame = false;
+            Time.timeScale = 0;
+        }
     }
 
     public GridState GetGrid(int row, int col)
     {
         return grid[row, col];
+    }
+
+    public bool isGameOver()
+    {
+        if (currentWinLose != WinLoseState.NONE)
+            return true;
+
+        return false;
     }
 
     /*
@@ -51,20 +94,33 @@ public class TicTacToeController : MonoBehaviour
             }
         }
         currentWinLose = WinLoseState.NONE;
+        Time.timeScale = 1;
+        isInGame = true;
+
+        if (playerChoose == GridState.PLAYER2)
+        {
+            RandomMove(GridState.PLAYER1);
+        }
     }
 
     /*
-     * 记录棋盘动作，并返回胜负情况 （如果为GridState.NONE,则为还没有胜负）
+     * 记录棋盘动作,如果当前格上已经有记录了则不执行任何操作
      */
     public void Move(int row, int col, GridState player)
     {
-        grid[row, col] = player;
-        currentWinLose = CheckWinState(row, col, player);
+        if (grid[row, col] == GridState.NONE && isInGame)
+        {
+            grid[row, col] = player;
+            if (currentWinLose == WinLoseState.NONE)
+            {
+                currentWinLose = CheckWinState(row, col, player);
+            }
+        }
     }
 
     /*
      * 每次move后进行一次胜负判定，如果这个格子的同一行，同一列，或者斜边有三个同样的数的情况下，判定玩家胜负，
-     * 返回WinLoseState以代表是哪个玩家获胜，如果没有则返回
+     * 返回WinLoseState以代表是哪个玩家获胜，如果没有则返回WinLoseState.NONE
      */
     public WinLoseState CheckWinState(int row, int col, GridState player)
     {
@@ -113,7 +169,50 @@ public class TicTacToeController : MonoBehaviour
         //如果棋盘没有还没下的格子，则本局平局
         return WinLoseState.DRAW;
     }
+
+    /*
+     * 指定一个玩家，随机在棋盘上的空格下一步棋
+     */
+    public void RandomMove(GridState player) 
+    {
+        var possibleGrid = new List<int[]>();
+
+        //寻找当前的空格
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (grid[i, j] == GridState.NONE)
+                {
+                    possibleGrid.Add(new int[] { i, j });
+                }
+            }
+        }
+
+        //如果还有空格，随机选择一个空格
+        if (possibleGrid.Count != 0)
+        {
+            var opponentMove = possibleGrid[UnityEngine.Random.Range(0, possibleGrid.Count)];
+            Move(opponentMove[0], opponentMove[1], player);
+        }
+    }
+
+    public void ChoosePlayer1() 
+    {
+        playerChoose = GridState.PLAYER1;
+        ClearGrid();
+        score = new int[]{0,0};
+    }
+
+    public void ChoosePlayer2()
+    {
+        playerChoose = GridState.PLAYER2;
+        ClearGrid();
+        score = new int[] { 0, 0 };
+    }
+
 }
+
 
 public enum GridState 
 {

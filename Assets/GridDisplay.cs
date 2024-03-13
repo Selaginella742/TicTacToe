@@ -41,9 +41,13 @@ public class GridDisplay : MonoBehaviour
 
     public void MoveGrid()
     {
-        if (TicTacToeController.instance.GetGrid(row,col) == GridState.NONE)
-        {
-            TicTacToeController.instance.Move(row, col, GridState.PLAYER1);
-        }
+        var player = TicTacToeController.instance.playerChoose;
+
+        var opponent = (player == GridState.PLAYER1) ? GridState.PLAYER2 : GridState.PLAYER1;
+
+        TicTacToeController.instance.Move(row, col, player);
+
+        if (!TicTacToeController.instance.isGameOver())
+            TicTacToeController.instance.RandomMove(opponent);
     }
 }
