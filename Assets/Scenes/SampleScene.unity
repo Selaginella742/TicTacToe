@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 274929332}
   - component: {fileID: 274929331}
   - component: {fileID: 274929330}
+  - component: {fileID: 274929333}
   m_Layer: 5
   m_Name: MiddleRIght
   m_TagString: Untagged
@@ -204,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 274929331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 274929333}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &274929331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +256,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274929328}
   m_CullTransparentMesh: 1
+--- !u!114 &274929333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274929328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 1
+  col: 2
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
+--- !u!1 &453963159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453963161}
+  - component: {fileID: 453963160}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &453963160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453963159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45556c148b4ba5e428a10572aeffb9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 
+--- !u!4 &453963161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453963159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1043.2681, y: 515.83374, z: 19.908615}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &470670209
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +329,7 @@ GameObject:
   - component: {fileID: 470670213}
   - component: {fileID: 470670212}
   - component: {fileID: 470670211}
+  - component: {fileID: 470670214}
   m_Layer: 5
   m_Name: MiddleLeft
   m_TagString: Untagged
@@ -324,7 +399,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470670212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470670214}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470670212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +450,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470670209}
   m_CullTransparentMesh: 1
+--- !u!114 &470670214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470670209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 1
+  col: 0
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +570,7 @@ GameObject:
   - component: {fileID: 654380881}
   - component: {fileID: 654380880}
   - component: {fileID: 654380879}
+  - component: {fileID: 654380882}
   m_Layer: 5
   m_Name: BottomCenter
   m_TagString: Untagged
@@ -536,7 +640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 654380880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 654380882}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &654380880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +691,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654380877}
   m_CullTransparentMesh: 1
+--- !u!114 &654380882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654380877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 2
+  col: 1
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &861520320
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +719,7 @@ GameObject:
   - component: {fileID: 861520324}
   - component: {fileID: 861520323}
   - component: {fileID: 861520322}
+  - component: {fileID: 861520325}
   m_Layer: 5
   m_Name: MiddleCenter
   m_TagString: Untagged
@@ -656,7 +789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 861520323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 861520325}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &861520323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +840,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861520320}
   m_CullTransparentMesh: 1
+--- !u!114 &861520325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861520320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 1
+  col: 1
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &911301851
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +868,7 @@ GameObject:
   - component: {fileID: 911301855}
   - component: {fileID: 911301854}
   - component: {fileID: 911301853}
+  - component: {fileID: 911301856}
   m_Layer: 5
   m_Name: TopLeft
   m_TagString: Untagged
@@ -776,7 +938,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 911301854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 911301856}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &911301854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +972,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -815,6 +989,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911301851}
   m_CullTransparentMesh: 1
+--- !u!114 &911301856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911301851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 0
+  col: 0
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &1134926839
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +1017,7 @@ GameObject:
   - component: {fileID: 1134926843}
   - component: {fileID: 1134926842}
   - component: {fileID: 1134926841}
+  - component: {fileID: 1134926844}
   m_Layer: 5
   m_Name: TopRight
   m_TagString: Untagged
@@ -896,7 +1087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1134926842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134926844}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1134926842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,6 +1138,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134926839}
   m_CullTransparentMesh: 1
+--- !u!114 &1134926844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134926839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 0
+  col: 2
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &1274794917
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +1166,7 @@ GameObject:
   - component: {fileID: 1274794921}
   - component: {fileID: 1274794920}
   - component: {fileID: 1274794919}
+  - component: {fileID: 1274794922}
   m_Layer: 5
   m_Name: TopCenter
   m_TagString: Untagged
@@ -1016,7 +1236,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1274794920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1274794922}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1274794920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,6 +1287,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274794917}
   m_CullTransparentMesh: 1
+--- !u!114 &1274794922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274794917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 0
+  col: 1
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &1483843080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1383,7 @@ GameObject:
   - component: {fileID: 1635277860}
   - component: {fileID: 1635277859}
   - component: {fileID: 1635277858}
+  - component: {fileID: 1635277861}
   m_Layer: 5
   m_Name: BottomRIght
   m_TagString: Untagged
@@ -1204,7 +1453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635277859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1635277861}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1635277859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,6 +1504,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635277856}
   m_CullTransparentMesh: 1
+--- !u!114 &1635277861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635277856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 2
+  col: 2
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1 &1733343377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1642,7 @@ GameObject:
   - component: {fileID: 1922411591}
   - component: {fileID: 1922411590}
   - component: {fileID: 1922411589}
+  - component: {fileID: 1922411592}
   m_Layer: 5
   m_Name: BottomLeft
   m_TagString: Untagged
@@ -1434,7 +1712,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1922411590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1922411592}
+        m_TargetAssemblyTypeName: GridDisplay, Assembly-CSharp
+        m_MethodName: MoveGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1922411590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,6 +1763,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922411587}
   m_CullTransparentMesh: 1
+--- !u!114 &1922411592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922411587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a744bb2e87b9e244bcdfc6afdce9935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  row: 2
+  col: 0
+  player1Image: {fileID: 21300000, guid: aff6a691424085149976549647139ba5, type: 3}
+  player2Image: {fileID: 21300000, guid: e34b58a82aa915d46b1077dca67e4872, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1480,3 +1786,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1733343381}
   - {fileID: 1483843083}
+  - {fileID: 453963161}

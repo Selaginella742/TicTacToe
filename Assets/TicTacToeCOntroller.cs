@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TicTacToeCOntroller : MonoBehaviour
+public class TicTacToeController : MonoBehaviour
 {
-    public static TicTacToeCOntroller instance;
+    public static TicTacToeController instance;
     
     GridState[,] grid;
 
-    bool isInGame;
+    bool isInGame = true;
+    WinLoseState currentWinLose = WinLoseState.NONE;
     [HideInInspector]public int[] score;
     
 
@@ -32,6 +33,11 @@ public class TicTacToeCOntroller : MonoBehaviour
         
     }
 
+    public GridState GetGrid(int row, int col)
+    {
+        return grid[row, col];
+    }
+
     /*
      * 重置棋盘
      */
@@ -44,16 +50,16 @@ public class TicTacToeCOntroller : MonoBehaviour
                 grid[i, j] = GridState.NONE;
             }
         }
+        currentWinLose = WinLoseState.NONE;
     }
 
     /*
      * 记录棋盘动作，并返回胜负情况 （如果为GridState.NONE,则为还没有胜负）
      */
-    public WinLoseState move(int row, int col, GridState player)
+    public void Move(int row, int col, GridState player)
     {
         grid[row, col] = player;
-
-        return CheckWinState(row, col, player);
+        currentWinLose = CheckWinState(row, col, player);
     }
 
     /*
